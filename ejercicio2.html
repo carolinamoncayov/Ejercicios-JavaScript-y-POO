@@ -1,0 +1,17 @@
+<script>
+    let inicio = ["unacadena", 3, 9, 1, 10, 500, 1, 10, true];
+
+let filtro1 = inicio.filter((num) => Number.isInteger(num));
+console.log(filtro1);
+ 
+function orderNum(filtro1) {
+    for (var i = 1; i < filtro1.length; i++) {
+        var tmp = filtro1[i];
+        for (var j = i - 1; j >= 0 && (filtro1[j] < tmp); j--) {
+            filtro1[j + 1] = filtro1[j];
+        }
+        filtro1[j + 1] = tmp;
+    }
+    return filtro1;
+}
+</script>
